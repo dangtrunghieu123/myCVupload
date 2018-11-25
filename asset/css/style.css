@@ -1,0 +1,598 @@
+*{
+    padding:0;
+    margin:0;
+   
+}
+ul li{
+    list-style: none;
+}
+button{
+    border:none;
+    outline: none;
+}
+.backGround{
+    width: 100%;
+    height:100vh;
+}
+
+canvas{
+    z-index: 100;
+    display:block;
+    vertical-align:bottom;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  
+  #particles-js{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: #b61924; */
+    background-image: linear-gradient(to bottom right, #00FFFF 35%, #00FF00);
+    /* background-image: url(''); */
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  /* about me */
+  .menu{
+      z-index: 200;
+      position: absolute;
+      top:20%;
+      left:5%;
+  }
+  .menu>ul li button{
+      width:140px;
+      height:80px;
+  }
+  .menu>ul li .about{
+      padding:15px;
+      font-size:20px;
+      color:blue;
+      border-radius:10px;
+
+  }
+  .menu>ul li .about i{
+      color:orangered;
+      font-size:30px;
+  }
+
+  .menu>ul li .education{
+    margin:12px 0;
+    padding:14px;
+    font-size:20px;
+    color:white;
+    border-radius:10px;
+    background: blue;
+
+}
+.menu>ul li .education i{
+    color:orangered;
+    font-size:30px;
+}
+
+.menu>ul li .contact{
+    padding:12px;
+    font-size:20px;
+    color:white;
+    border-radius:10px;
+    background: orangered;
+
+}
+.menu>ul li .contact i{
+    color:blue;
+    font-size:30px;
+}
+
+/* avatar */
+.avatar{
+    z-index: 200;
+    position: absolute;
+    top:8%;
+    left:18%;
+    width: 400px;
+    height:530px;
+    background: white;
+    border-radius: 10px;
+}
+.avatar .on{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height:49%;
+    background: url('../../asset/img/banLamViec.jpg');
+    background-size:cover;
+    background-position:center center;
+}
+.avatar .on:after{
+    content: '';
+    position: absolute;
+    top:43%;
+    width: 250px;
+    height:150px;
+    background: white;
+    transform: skewY(23deg);
+}
+.avatar .on .ava {
+    z-index: 200;
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:33%;
+    left:38%;
+}
+.avatar .on .ava img{
+    width:100%;
+    height:100%;
+}
+.avatar .on .ava:after,.avatar .on .ava:before{
+    position: absolute;
+    top:-10px;
+    left:-12px;
+    content:'';
+    height:115%;
+    width:115%;
+    border:3px solid blue;
+    animation: clipMe 8s linear infinite;
+}
+.avatar .on .ava:after{
+   animation-delay: -3s;
+}
+
+  @keyframes clipMe {
+    0%, 100% {
+      clip: rect(0px, 180px, 2px, 0px);
+    }
+    25% {
+      clip: rect(0px, 2px, 180px, 0px);
+    }
+    50% {
+      clip: rect(218px, 180px, 180px, 0px);
+    }
+    75% {
+      clip: rect(0px, 180px, 180px, 218px);
+    }
+  }
+ 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+/* under */
+.avatar .under{
+    position: relative;
+    z-index: 250;
+    height:190px;
+    text-align: center;
+}
+.avatar .contactSocial{
+    background: #EEEEEE;
+    padding:10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.avatar .contactSocial ul{
+    display: flex;
+    text-align: center;
+    margin-left:30%;
+}
+
+.avatar .contactSocial>ul li{
+    font-size:35px;
+    /* background:blue; */
+    margin-right:5px;
+
+}
+.avatar .contactSocial>ul li a{
+    color:gray;
+}
+
+/* name */
+.avatar .under .name{
+    position: absolute;
+    top:47%;
+    left:37%;
+}
+
+/* aboutMe */
+
+.aboutMe{
+    margin: auto;
+    width: 500px;
+    height: 530px;
+    border-radius: 4px;
+    position: absolute;
+    left: 55%; 
+    top:9%;
+    cursor: pointer;
+    background: white;
+    transition: transform 0.4s ease;
+    z-index: 200;
+    border: 1px solid gray;
+    overflow-y:scroll;
+}
+.aboutMe::-webkit-scrollbar,.edu::-webkit-scrollbar,.contactMe::-webkit-scrollbar{
+    width: 10px;
+  
+}
+
+.aboutMe::-webkit-scrollbar-track,.edu::-webkit-scrollbar-track,.contactMe::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.aboutMe::-webkit-scrollbar-thumb,.edu::-webkit-scrollbar-thumb,.contactMe::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /* -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.9);  */
+    background: #B5B5B5	;
+}
+.carrerContent{
+    position: relative;
+    font-size:20px;
+    font-weight:100;
+    line-height: 25px;
+    margin-bottom: 35px;
+    
+}
+.carrerContent:after{
+    position: absolute;
+    content:'';
+    top:0;
+    left:8px;
+    width:1px;
+    height:100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom,		#FF6600 , #FFFF00);
+}
+.carrerContent .p{
+    position: relative;
+    margin:0 10px 0 30px;
+    padding:10px 0;
+}
+.carrerContent .p:after{
+    position: absolute;
+    content:'';
+    top:16px;
+    left:-30px;
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom,		#FF6600 , #FFFF00);
+}
+.carrerContent .p:before{
+    position: absolute;
+    content:'';
+    top:100%;
+    left:-30px;
+    width:100%;
+    height:1px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom,		#FF6600 , #FFFF00);
+}
+
+ .title {
+    margin:10px;
+    font-size:28px;
+    font-weight:50;
+    position: relative;
+}
+
+ .title:after{
+    z-index: -1;
+    position: absolute;
+    content:'';
+    top:9px;
+    left:-10px;
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top right , #CCFFFF, rgb(0, 255, 136));
+}
+ .title:before{
+    /* z-index: -1; */
+    position: absolute;
+    content:'';
+    top:100%;
+    left:-10px;
+    width:100%;
+    height:1px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+.Content .aboutme .text{
+    font-size:20px;
+    font-weight:100;
+    line-height: 25px;
+    padding-left:10px;
+}
+.Content{
+    position: relative;
+}
+.Content:after{
+    position: absolute;
+    content:'';
+    top:0;
+    left:8px;
+    width:1px;
+    height:100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+
+
+/* education */
+.edu{
+    margin: auto;
+    width: 500px;
+    height: 430px;
+    border-radius: 4px;
+    position: absolute;
+    left: 51%; 
+    top:14%;
+    cursor: pointer;
+    background: white;
+    transition: transform 0.4s ease;
+    z-index: 200;
+    border: 1px solid gray;
+    overflow-y: scroll;
+}
+
+.left ,.right {
+    position: relative;
+}
+.left:after{
+    position: absolute;
+    content:'';
+    top:0;
+    right:0;
+    width:1px;
+    height:100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+.myExperientce p{
+   margin-left:20px;
+    position: relative;
+    font-size:20px;
+    line-height:23px;
+    font-weight:100;
+
+}
+.myExperientce p:after{
+    position: absolute;
+    content:'';
+    top:5px;
+    left:-20px;
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+.left .leftTitle i,.right .rightTitle i{
+    font-size:30px;
+    color:orangered;
+}
+.myUniversity,.eduCyberSoft{
+    position: relative;
+    font-size:20px;
+    line-height:23px;
+   
+}
+.mark{
+    position: relative;
+
+}
+.mark:after{
+    position: absolute;
+    content:'';
+    top:10px;
+    left:-15px;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+.myUniversity:after{
+    position: absolute;
+    content:'';
+    top:100%;
+    left:-10px;
+    width:100%;
+    height:1px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+
+/* my skill */
+.skillBox{
+	position: relative;
+	width:450px;
+	/* padding:50px; */
+	/* margin:100px auto; */
+}
+.skills{
+	position:relative;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.progress{
+	width: 100%;
+	height:20px;
+	border-radius: 10px;
+	border:1px solid blue;
+	
+	line-height: 22px;
+	color:black;
+	overflow: hidden;
+}
+.progress .percent{
+	text-align: right;
+	color:blue;
+    padding-right:10px;
+	border-radius:2px solid green;
+	animation:animate 0.5s linear infinite;
+	background-image:linear-gradient(45deg,rgba(55, 18, 219, 0.25) 25%, transparent 25%,transparent 50%,rgba(55, 18, 219, 0.25) 50%,rgba(55, 18, 219, 0.25) 75%,transparent 75%,transparent);
+	background-size:30px 30px;
+
+
+}
+@keyframes animate{
+	0%{
+		background-position: 0 0;
+	}
+	100%{
+		background-position: 30px 0;
+	}
+}
+/* my project */
+.pr img{
+    width:100%;
+    height:300px;
+}
+.pr1,.pr3{
+    position: relative;
+}
+.pr1:after{
+    position: absolute;
+    content:'';
+    top:-10px;
+    right:0;
+    width:1px;
+    height:100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+.pr3:before{
+    position: absolute;
+    content:'';
+    top:0;
+    right:0;
+    width:100%;
+    height:1px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left bottom , #CCFFFF, rgb(0, 255, 136));
+}
+.pr2 img{
+    margin-top:25px;
+    height:180px;
+}
+.pr3 img{
+    
+    height:270px;
+}
+.animte1{
+	transform: translateY(0);
+	animation:animateImg 1s linear ;
+}
+@keyframes animateImg{
+	0%{
+		transform: translateY(-200px);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+.animte2{
+	transform: translateY(0);
+	animation:animateImg2 2s linear ;
+}
+@keyframes animateImg2{
+	0%{
+        opacity: 0;
+		transform: translateY(-200px);
+    }
+    50%{
+        opacity: 0;
+		transform: translateY(-200px);
+	}
+	100%{
+        opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+/* contact */
+.contactMe{
+    margin: auto;
+    width: 500px;
+    height: 430px;
+    border-radius: 4px;
+    position: absolute;
+    left: 59%; 
+    top:17%;
+    cursor: pointer;
+    background: white;
+    transition: transform 0.4s ease;
+    z-index: 200;
+    border: 1px solid gray;
+    overflow: auto;
+}
+.mainSocial i{
+    font-size:30px;
+    text-align: center;
+}
+.mainSocial p{
+    margin-bottom:0;
+    font-size:20px;
+    font-weight:100;
+}
+.socialContact{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.socialContact >div{
+    font-size:30px;
+    border:1px solid green;
+    padding:5px 20px;
+    margin-top:20px;
+}
+/* form contact */
+.FormContact input{
+    margin-top:30px;
+    width: 80%;
+    height:30px;
+    border:none;
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+    background: transparent;
+    outline: none;
+  }
+  .FormContact  .userName label,.FormContact  .userEmail label{
+    pointer-events: none;
+    position: absolute;
+    top:25px;
+    left:0px;
+    color:gray;
+    font-size:20px;
+    transition:all 0.3s;
+  }
+  .userName, .userEmail{
+      position: relative;
+  }
+  .FormContact input:focus ~ label{
+    color: red;
+    transform: translateY(-20px);
+    font-size:15px;
+  }
+
+
+  /* responsive */
+  /* @media  screen and (max-width: 1300px){
+      .menu ul{
+        display: flex;
+      }
+      .avatar{
+          top:50%;
+      }
+      .intro{
+        
+          padding-top:600px;
+      }
+  } */
